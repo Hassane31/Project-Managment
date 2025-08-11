@@ -27,6 +27,7 @@ input{
     border-radius: 4px;
     padding: 4px;
     color: white;
+    transition: 0.2s;
 }
 input:focus{
 background: rgb(46, 46, 46);
@@ -42,4 +43,36 @@ transform: scale(1.1);
 }
 #total::before{
     content: 'Total: ';
+}
+button{
+    width: 100%;
+    height: 30px;
+    border: none;
+cursor: pointer;
+background: rgb(46, 46, 46);
+color: white;
+border-radius: 20px;
+transition: 0.5s;
+}
+button:hover{
+    background: rgb(80, 79, 79);
+    transform: scale(1.1);
+
+}
+.btnSearch{
+    display: flex;
+    justify-content: space-between;
+}
+.btnSearch button{
+    width: 45%;
+}
+table{
+    width: 100%;
+    text-align: center;
+}
+table th{
+    text-transform: uppercase;
+}
+th,td{
+    padding: 5px;
 }
