@@ -30,10 +30,10 @@
 
 
 <div class="outputs">
-        <input type="text" id="search" placeholder="Search">
+        <input type="text" onkeyup="searchData(this.value)" id="search" placeholder="Search">
         <div class="btnSearch">
-            <button id="searchTitle">Search By Title</button>
-            <button id="searchCatefory">Search By Category</button>
+            <button onclick="getSearchMood (this.id)" id="searchTitle">Search By Title</button>
+            <button onclick="getSearchMood (this.id)" id="searchCatefory">Search By Category</button>
         </div>
 
     </div>
