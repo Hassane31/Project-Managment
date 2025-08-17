@@ -7,24 +7,30 @@
 </head>
 <body>
  
+ 
 <div class="crud">
     <div class="head">
-<h2>Project Management</h2>
-<p>welcome to my web</p> 
-   </div>
+        <!-- Added theme toggle button with icons -->
+        <button id="themeToggle" class="theme-toggle">
+            <i class="fas fa-moon" id="themeIcon"></i>
+        </button>
+        <!-- Added icons to headings -->
+        <h2><i class="fas fa-tasks"></i> Project Management</h2>
+        <p><i class="fas fa-hand-wave"></i> welcome to my web</p> 
+  
 
     <div class="inputs" >
 <input type="text"  id="title" placeholder="titel"><br>
 <div class="price" style="white-space: nowrap;">
-    <input onkeyup="getTotal()" placeholder="price" type="number"  id="price" >
-    <input onkeyup="getTotal()" placeholder="taxes" type="number"  id="taxes" >
-    <input onkeyup="getTotal()" placeholder="ads" type="number"  id="ads" >
-    <input onkeyup="getTotal()" placeholder="discount" type="number"  id="discount" >
+    <input onkeyup="getTotal()" placeholder="💰" type="number"  id="price" >
+    <input onkeyup="getTotal()" placeholder="📊" type="number"  id="taxes" >
+    <input onkeyup="getTotal()" placeholder="📢" type="number"  id="ads" >
+    <input onkeyup="getTotal()" placeholder="🏷️" type="number"  id="discount" >
     <small id="total">0</small>
 </div>
 <br>
-<input type="number" name="" id="count" placeholder="count">
-<input type="text" name="" id="category" placeholder="category">
+<input type="number" name="" id="count" placeholder="🔢">
+<input type="text" name="" id="category" placeholder="📂">
 <button id="submit">Create</button> 
    </div>
 
