@@ -144,9 +144,9 @@ function updateData(i) {
 function getSearchMood(id) {
   const search = document.getElementById("search")
   if (id == "searchTitle") {
-    searchMood = "Title"
+    searchMood = "title"
   } else {
-    searchMood = "Category"
+    searchMood = "category"
   }
   search.placeholder = "Search By " + searchMood
   search.focus()
@@ -155,42 +155,35 @@ function getSearchMood(id) {
 }
 function searchData(value) {
   let table = ""
+  value = value.toLowerCase()  // normalize input
   for (let i = 0; i < dataPro.length; i++) {
     if (searchMood == "title") {
-      if (dataPro[i].title.includes(value.toLowerCase())) {
-        table += `
-           <tr>
-            <td>${i}</td>
-            <td>${dataPro[i].title}</td>
-            <td>${dataPro[i].price}</td>
-            <td>${dataPro[i].taxes}</td>
-            <td>${dataPro[i].ads}</td>
-              <td>${dataPro[i].discount}</td>
-                <td>${dataPro[i].total}</td>
-                <td>${dataPro[i].category}</td>
-                <td><button onclick="updateData( ${i} )" id="update">update</button></td>
-                <td><button onclick="deleteData ( ${i} )" id="delete">delete</button></td>
-        </tr>`
+      if (dataPro[i].title.includes(value)) {
+        table += createRow(i)
       }
-    } else {
-      if (dataPro[i].category.toLowerCase().includes(value.toLowerCase())) {
-        table += `
-           <tr>
-            <td>${i}</td>
-            <td>${dataPro[i].title}</td>
-            <td>${dataPro[i].price}</td>
-            <td>${dataPro[i].taxes}</td>
-            <td>${dataPro[i].ads}</td>
-              <td>${dataPro[i].discount}</td>
-                <td>${dataPro[i].total}</td>
-                <td>${dataPro[i].category}</td>
-                <td><button onclick="updateData( ${i} )" id="update">update</button></td>
-                <td><button onclick="deleteData ( ${i} )" id="delete">delete</button></td>
-        </tr>`
+    } else if (searchMood == "category") {
+      if (dataPro[i].category.includes(value)) {
+        table += createRow(i)
       }
     }
   }
   document.getElementById("tbody").innerHTML = table
+}
+
+function createRow(i) {
+  return `
+    <tr>
+      <td>${i + 1}</td>
+      <td>${dataPro[i].title}</td>
+      <td>${dataPro[i].price}</td>
+      <td>${dataPro[i].taxes}</td>
+      <td>${dataPro[i].ads}</td>
+      <td>${dataPro[i].discount}</td>
+      <td>${dataPro[i].total}</td>
+      <td>${dataPro[i].category}</td>
+      <td><button onclick="updateData(${i})" id="update">update</button></td>
+      <td><button onclick="deleteData(${i})" id="delete">delete</button></td>
+    </tr>`
 }
 //clean data
 
