@@ -122,7 +122,7 @@ function deleteAll() {
   dataPro.splice(0)
   showData()
 }
-//update
+
 function updateData(i) {
   title.value = dataPro[i].title
   price.value = dataPro[i].price
@@ -140,7 +140,7 @@ function updateData(i) {
     behavior: "smooth",
   })
 }
-//search
+
 function getSearchMood(id) {
   const search = document.getElementById("search")
   if (id == "searchTitle") {
@@ -185,15 +185,12 @@ function createRow(i) {
       <td><button onclick="deleteData(${i})" id="delete">delete</button></td>
     </tr>`
 }
-//clean data
 
-// Theme toggle functionality
+
 document.addEventListener("DOMContentLoaded", () => {
-  // Check for saved theme preference or default to light mode
+ 
   const currentTheme = localStorage.getItem("theme") || "light"
   body.setAttribute("data-theme", currentTheme)
-
-  // Update icon based on current theme
   updateThemeIcon(currentTheme)
 
   themeToggle.addEventListener("click", () => {
